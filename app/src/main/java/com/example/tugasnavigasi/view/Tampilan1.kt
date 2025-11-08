@@ -51,4 +51,17 @@ fun Beranda(onStartClick: () -> Unit) {
                 )
             )
         }
-    ) {
+    ) { innerPadding ->
+        Box(
+            modifier = Modifier
+                .padding(innerPadding)
+                .fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.padding_medium))
+            )
+    }
+}
