@@ -50,3 +50,10 @@ fun FormIsian(
     onSelesaiDialog: () -> Unit,
     onBerandaClick: () -> Unit
 ) {
+
+    var nama by rememberSaveable { mutableStateOf("") }
+    var gender by rememberSaveable { mutableStateOf("") }
+    var status by rememberSaveable { mutableStateOf("") }
+    var alamat by rememberSaveable { mutableStateOf("") }
+    var showDialog by remember { mutableStateOf(false) }
+
