@@ -99,3 +99,15 @@ fun FormIsian(
                     RadioItem(label = "Laki-laki", selected = gender == "Laki-laki") { gender = "Laki-laki" }
                     RadioItem(label = "Perempuan", selected = gender == "Perempuan") { gender = "Perempuan" }
                 }
+
+                Text(
+                    text = "STATUS PERKAWINAN",
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Medium
+                )
+
+                Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                    RadioItem(label = "Janda", selected = status == "Janda") { status = "Janda" }
+                    RadioItem(label = "Menikah", selected = status == "Menikah") { status = "Menikah" }
+                    RadioItem(label = "Single", selected = status == "Single") { status = "Single" }
+                }
