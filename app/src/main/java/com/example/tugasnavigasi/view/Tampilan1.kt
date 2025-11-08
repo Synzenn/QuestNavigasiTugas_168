@@ -62,6 +62,15 @@ fun Beranda(onStartClick: () -> Unit) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.padding_medium))
-            )
-    }
+            ) {
+                Text(
+                    text = stringResource(id = R.string.welcome),
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black
+                )
+
+                Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
+
+
 }
