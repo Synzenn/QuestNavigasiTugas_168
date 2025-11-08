@@ -137,7 +137,7 @@ fun FormIsian(
 
                 Button(
                     onClick = {
-                        
+
                         onSubmit(nama.trim(), gender, status, alamat.trim())
                         showDialog = true
                     },
@@ -149,3 +149,49 @@ fun FormIsian(
             }
         }
     }
+
+    if (showDialog) {
+        Dialog(onDismissRequest = {}) {
+            val cardShape = RoundedCornerShape(16.dp)
+            Card(
+                shape = cardShape,
+                modifier = Modifier
+                    .fillMaxWidth(0.9f)
+                    .wrapContentHeight(),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+            ) {
+                Column(modifier = Modifier.padding(paddingMedium)) {
+                    Text(
+                        text = stringResource(id = R.string.data_saved),
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp,
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Center
+                    )
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    // Dialog content rows
+                    DialogRow(k = stringResource(id = R.string.nama_lengkap), v = nama)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    DialogRow(k = stringResource(id = R.string.jenis_kelamin), v = gender)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    DialogRow(k = "Status", v = status)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    DialogRow(k = stringResource(id = R.string.alamat), v = alamat)
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                        TextButton(onClick = {
+                            showDialog = false
+                            onSelesaiDialog()
+                        }) {
+                            Text(text = stringResource(id = R.string.ok))
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
