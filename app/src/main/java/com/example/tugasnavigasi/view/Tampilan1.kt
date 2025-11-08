@@ -31,3 +31,24 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tugasnavigasi.R
 
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun Beranda(onStartClick: () -> Unit) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = stringResource(id = R.string.home),
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White,
+
+                    )
+                },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(
+                    containerColor = Color.DarkGray
+                )
+            )
+        }
+    ) {
