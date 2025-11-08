@@ -72,5 +72,19 @@ fun Beranda(onStartClick: () -> Unit) {
 
                 Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
 
+                Image(
+                    painter = painterResource(id = R.drawable.karina),
+                    contentDescription = "Logo Aplikasi",
+                    modifier = Modifier
+                        .fillMaxWidth(0.9f)
+                        .height(230.dp)
+                        .clip(RoundedCornerShape(16.dp)),
+                    contentScale = ContentScale.Crop
+                )
 
+                Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+
+
+        }
+    }
 }
