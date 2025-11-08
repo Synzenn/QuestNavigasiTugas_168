@@ -6,5 +6,9 @@
     <string name="submit">Submit</string>
     <string name="back">Kembali</string>
     <string name="nama_lengkap">Nama Lengkap</string>
-
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="alamat">Alamat</string>
+    <string name="ok">OK</string>
+    <string name="data_saved">Data Berhasil Disimpan</string>
+    <string name="form_title">Formulir Pendaftaran</string>
 </resources>
