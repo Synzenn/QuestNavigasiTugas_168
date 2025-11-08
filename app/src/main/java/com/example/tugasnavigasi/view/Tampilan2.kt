@@ -42,3 +42,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import com.example.tugasnavigasi.R
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FormIsian(
+    onSubmit: (String, String, String, String) -> Unit,
+    onSelesaiDialog: () -> Unit,
+    onBerandaClick: () -> Unit
+) {
