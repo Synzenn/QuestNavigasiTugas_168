@@ -195,3 +195,37 @@ fun FormIsian(
         }
     }
 }
+
+@Composable
+private fun DialogRow(k: String, v: String) {
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 4.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(text = k)
+        Text(text = v.ifBlank { "-" }, fontWeight = FontWeight.SemiBold)
+    }
+}
+
+
+@Composable
+private fun RadioItem(label: String, selected: Boolean, onSelect: () -> Unit) {
+    val selectedColor = MaterialTheme.colorScheme.primary
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .clip(RoundedCornerShape(8.dp))
+            .padding(4.dp)
+    ) {
+        RadioButton(
+            selected = selected,
+            onClick = onSelect,
+            colors = RadioButtonDefaults.colors(selectedColor = selectedColor)
+        )
+        Spacer(modifier = Modifier.width(6.dp))
+        Text(text = label, modifier = Modifier.padding(top = 2.dp))
+    }
+}
