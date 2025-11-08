@@ -57,3 +57,8 @@ fun FormIsian(
     var alamat by rememberSaveable { mutableStateOf("") }
     var showDialog by remember { mutableStateOf(false) }
 
+
+    val paddingSmall = dimensionResource(id = R.dimen.padding_small)
+    val paddingMedium = dimensionResource(id = R.dimen.padding_medium)
+    val paddingLarge = dimensionResource(id = R.dimen.padding_large)
+    val valid = nama.isNotBlank() && gender.isNotBlank() && status.isNotBlank() && alamat.isNotBlank()
