@@ -62,3 +62,29 @@ fun FormIsian(
     val paddingMedium = dimensionResource(id = R.dimen.padding_medium)
     val paddingLarge = dimensionResource(id = R.dimen.padding_large)
     val valid = nama.isNotBlank() && gender.isNotBlank() && status.isNotBlank() && alamat.isNotBlank()
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(text = stringResource(id = R.string.form_title)) }
+            )
+        }
+    ) { pad ->
+        Column(
+            modifier = Modifier
+                .padding(pad)
+                .padding(horizontal = paddingMedium, vertical = paddingSmall)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            // Form fields
+            Column(
+                verticalArrangement = Arrangement.spacedBy(paddingSmall)
+            ) {
+                OutlinedTextField(
+                    value = nama,
+                    onValueChange = { nama = it },
+                    label = { Text(stringResource(id = R.string.nama_lengkap)) },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth()
+                )
