@@ -88,3 +88,14 @@ fun FormIsian(
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth()
                 )
+
+                Text(
+                    text = stringResource(id = R.string.jenis_kelamin),
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Medium
+                )
+
+                Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                    RadioItem(label = "Laki-laki", selected = gender == "Laki-laki") { gender = "Laki-laki" }
+                    RadioItem(label = "Perempuan", selected = gender == "Perempuan") { gender = "Perempuan" }
+                }
