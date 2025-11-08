@@ -111,3 +111,41 @@ fun FormIsian(
                     RadioItem(label = "Menikah", selected = status == "Menikah") { status = "Menikah" }
                     RadioItem(label = "Single", selected = status == "Single") { status = "Single" }
                 }
+
+                OutlinedTextField(
+                    value = alamat,
+                    onValueChange = { alamat = it },
+                    label = { Text(stringResource(id = R.string.alamat)) },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(120.dp)
+                )
+            }
+
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(top = paddingSmall),
+                horizontalArrangement = Arrangement.spacedBy(paddingSmall)
+            ) {
+                OutlinedButton(
+                    onClick = { onBerandaClick() },
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text(text = stringResource(id = R.string.home))
+                }
+
+                Button(
+                    onClick = {
+                        
+                        onSubmit(nama.trim(), gender, status, alamat.trim())
+                        showDialog = true
+                    },
+                    enabled = valid,
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text(text = stringResource(id = R.string.submit))
+                }
+            }
+        }
+    }
